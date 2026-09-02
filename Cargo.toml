@@ -7,3 +7,4 @@ edition = "2024"
 clap = { version = "4.6.1", features = ["derive"] }
 regex = "1.12.3"
 walkdir = "2"
+owo-colors = "4.4.0"
