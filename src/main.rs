@@ -1,6 +1,7 @@
 use std::path::Path;
 
 use clap::Parser;
+use owo_colors::OwoColorize;
 
 use crate::{
     cli::Cli,
@@ -27,12 +28,20 @@ fn show_results(results: &Vec<PatternSearchResult>, options: ShowOptions) {
 
     for result in results {
         let file_path = &result.file_path;
-        println!("{:?}", file_path);
+        println!("{:?}", file_path.cyan());
 
         for m in &result.matches {
-            let message = format!("{}. {}", m.line_number, m.line_content);
+            let before = &m.line_content[..m.start];
+            let matched = &m.line_content[m.start..m.end];
+            let after = &m.line_content[m.end..];
 
-            println!("\t{}", message);
+            print!("\t");
+            print!("{}", format!("{}.", m.line_number).yellow());
+            print!("\t");
+            print!("{}", before.bright_black());
+            print!("{}", matched.green());
+            print!("{}", after.bright_black());
+            print!("\n");
         }
     }
 }
