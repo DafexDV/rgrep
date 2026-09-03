@@ -6,7 +6,7 @@ use std::{
 use regex::Regex;
 use walkdir::WalkDir;
 
-use crate::regex::cache_get_or_create;
+use crate::regex::create_regexes;
 
 pub(crate) struct PatternSearchOptions {
     pub ignore_case: bool,
@@ -113,7 +113,7 @@ fn search_in_file(
 }
 
 fn get_regex_by_options(pattern_str: &str, options: &PatternSearchOptions) -> Regex {
-    let regexes = cache_get_or_create(pattern_str);
+    let regexes = create_regexes(pattern_str);
 
     return match (options.whole_word, options.ignore_case) {
         (false, false) => regexes.normal,
