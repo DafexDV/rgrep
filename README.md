@@ -5,14 +5,6 @@
 
 This is my attempt to recreate the Linux's command "grep" in Rust.
 
-## Learning
-
-In this project, I put into practice:
-
-- Rust collections (`std::collections::{HashMap, HashSet}`)
-- IO operations
-- Static variables and caches
-
 ## Installation
 
 1. Clone the repository
@@ -59,7 +51,6 @@ Options:
 |-------------------|-----------------------------------------------------------------------------|
 | `-i`              | Search ignoring uppercase and lowercase                                     |
 | `-v`              | Show lines that do not match                                                |
-| `-n`              | Shows the line number in the file where the match was found                 |
 | `-c`              | Instead of showing the lines, it just tells you how many matches were found |
 | `-w`              | Only matches the exact word, not if it is part of a larger                  |
 | `-h`, `--help`    | Print help                                                                  |
