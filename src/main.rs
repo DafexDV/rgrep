@@ -1,6 +1,6 @@
-pub(crate) mod cli;
+mod cli;
 mod regex;
-pub(crate) mod search;
+mod search;
 
 fn main() {
     cli::init_cli();
