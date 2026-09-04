@@ -9,8 +9,8 @@ This is my attempt to recreate the Linux's command "grep" in Rust.
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/DafexDV/rust-grep.git
-   cd rust-grep
+   git clone https://github.com/DafexDV/rgrep.git
+   cd rgrep
    cargo install --path .
    ```
 2. Compile the project with cargo
@@ -19,31 +19,27 @@ This is my attempt to recreate the Linux's command "grep" in Rust.
    ```
 3. Run the cli
    ```
-   cargo build release
-   # In Linux/MacOS
-   ./target/release/grep
-   # In Windows
-   .\target/release/grep
+   cargo run -- <your args here>
    ```
 
 ## Use
 
 Syntax:
 ```bash
-grep [OPTIONS] <PATTERN> <FILE>
+rgrep [OPTIONS] <PATTERN> <FILE>
 ```
 
 Example:
 ```bash
-grep hello test.txt
+rgrep test.txt hello
 ```
 
 Arguments:
 
 | # | Name        | Description                                    |
 |---|-------------|------------------------------------------------|
-| 1 | `<PATTERN>` | Search ignoring uppercase and lowercase        |
-| 2 | `<FILE>`    | The file in which the pattern will be searched |
+| 1 | `<FILE>`    | The file in which the pattern will be searched |
+| 2 | `<PATTERN>` | Search ignoring uppercase and lowercase        |
 
 Options:
 
